@@ -52,12 +52,12 @@ const products = new ProductManage()
 console.log(products.getProducts())
 
 // Agregar producto prueba
-products.addProduct('Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
+products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
 
 // Cosultamos (aparece nuevo producto)
 console.log(products.getProducts())
 
-// Agregar mismo prooducto prueba (genera error)
+// Agregar mismo producto prueba (genera error)
 products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
 
 // Buscar producto por id: 1 (lo encuentra)
