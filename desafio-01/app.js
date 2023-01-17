@@ -49,19 +49,22 @@ class ProductManage {
 const products = new ProductManage()
 
 // Cosultamos (vacio nuevamente)
-console.log(products.getProducts())
+console.log(products.getProducts()) // []
 
 // Agregar producto prueba
 products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
 
 // Cosultamos (aparece nuevo producto)
-console.log(products.getProducts())
+console.log(products.getProducts()) // [{title: 'producto prueba'...}]
 
 // Agregar mismo producto prueba (genera error)
-products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
+products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25) // 'El código ya está siendo utilizado por otro producto'
+
+// Generamos error de campo faltante
+products.addProduct('producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'xyz789') // 'Debes ingresar todos los parámetros'
 
 // Buscar producto por id: 1 (lo encuentra)
-console.log(products.getProductById(1))
+console.log(products.getProductById(1)) // {title: 'producto prueba'...}
 
 // Buscar producto por id: 10 (no lo encuentra ya que no existe)
-console.log(products.getProductById(10))
+console.log(products.getProductById(10)) // 'Not found'
